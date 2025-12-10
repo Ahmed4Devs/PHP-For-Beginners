@@ -1,7 +1,5 @@
 <?php
 
-$routes = require('routes.php');
-
 function routeToController($uri, $routes)
 {
   // if the uri request is not in our routes then call abort function.
@@ -21,6 +19,7 @@ function abort($code = 404)
   die();
 }
 
+$routes = require('routes.php');
 // parse_url function take the request path to use it down
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
