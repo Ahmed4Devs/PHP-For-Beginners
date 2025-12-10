@@ -1,18 +1,6 @@
 <?php
 
-
-// parse_url function take the request path to use it down
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-
-// our routes ( URLs in out website). we can add more :)
-$routes = [
-  '/' => 'controllers/index.php',
-  '/about' => 'controllers/about.php',
-  '/notes' => 'controllers/notes.php',
-  '/note' => 'controllers/note.php',
-  '/contact' => 'controllers/contact.php',
-];
-
+$routes = require('routes.php');
 
 function routeToController($uri, $routes)
 {
@@ -32,5 +20,8 @@ function abort($code = 404)
 
   die();
 }
+
+// parse_url function take the request path to use it down
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 routeToController($uri, $routes);
