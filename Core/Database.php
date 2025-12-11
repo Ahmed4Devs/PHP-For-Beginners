@@ -1,5 +1,9 @@
 <?php
 
+namespace Core;
+
+use PDO;
+
 // Connect to the database, and execute a query.
 // this :: mean Scope Resolution Operator
 class Database
