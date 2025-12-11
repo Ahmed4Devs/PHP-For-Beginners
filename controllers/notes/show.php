@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
   authorize($note['user_id'] === $currentUserId);
 
   view("notes/show.view.php", [
-    'heading' => 'Create Note',
+    'heading' => 'Note',
     'note' => $note
   ]);
 }
