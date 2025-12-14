@@ -19,7 +19,7 @@ if (! Validator::string($password)) {
 }
 
 if (!empty($errors)) {
-  return view('sessions/create.view.php', [
+  return view('session/create.view.php', [
     'errors' => $errors
   ]);
 }
@@ -42,7 +42,7 @@ if ($user) {
 
 // we have a user, but we don't kniw if the password provided matches what we have in the database
 
-return view('sessions/create.view.php', [
+return view('session/create.view.php', [
   'errors' => [
     'email' => 'No matching account found for that email address and password',
   ]
