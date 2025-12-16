@@ -2,8 +2,6 @@
 
 namespace Core;
 
-use Core\Middleware\Auth;
-use Core\Middleware\Guest;
 use Core\Middleware\Middleware;
 
 class Router
@@ -68,6 +66,11 @@ class Router
     }
 
     $this->abort();
+  }
+
+  public function prevUrl()
+  {
+    return $_SERVER["HTTP_REFERER"];
   }
 
   protected function abort($code = 404)
